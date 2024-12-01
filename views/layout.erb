@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt #2</title>
+    <link rel="stylesheet" type="text/css" href="/style.css?<%=Time.now.to_i%>">
+</head>
+<body>
+  <header>
+    <img src="/img/glhf.png">
+    <h1>Strat Roulette</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="/">välj ny strat</a></li>
+      <li><a href="/strats">alla strats</a></li>
+      <li><a href="">ny strat</a></li>
+    </ul>
+  </nav>
+  
+  <%= yield %>
+  
+  <footer>
+    <p>gluh</p>
+  </footer>
+</body>
+</html>

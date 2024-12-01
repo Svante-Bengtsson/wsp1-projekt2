@@ -1,0 +1,19 @@
+<h2>alla strats:</h2>
+<ul>
+  <% @strats.each do |strat| %>
+    <li>
+      <a
+        href="/strats/<%= strat['id'] %>"
+        style="text-decoration: none; color: black"
+      >
+        <%= strat['name'] %>
+      </a>
+      <% 
+        rating_tot = strat['rating_tot'] || 0
+        rating_amount = strat['rating_amount'] || 1
+        rating = rating_tot.to_f / rating_amount.to_f
+      %>
+      <%= "☆" * rating.to_i + "★" * (10 - rating.to_i) %>
+    </li>
+  <% end %>
+</ul>

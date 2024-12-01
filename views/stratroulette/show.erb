@@ -1,0 +1,11 @@
+</h3>
+<h2>Name: <%= @strat['name'] %></h2>
+<p><%= @strat['description'] %></p>
+<p>
+    <% 
+        rating_tot = @strat['rating_tot'] || 0
+        rating_amount = @strat['rating_amount'] || 1
+        rating = rating_tot.to_f / rating_amount.to_f
+      %>
+      <%= "☆" * rating.to_i + "★" * (10 - rating.to_i) %>
+</p>
