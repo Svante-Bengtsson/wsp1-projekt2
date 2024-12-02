@@ -1,0 +1,5 @@
+<form action="/strats/<%= @strat['id'] %>/update" method="post">
+  <label>Namn: <input name="strat_name" type="text" value="<%= @strat['name'] %>"/></label>
+  <label>Beskrivning: <input name="strat_description" type="text" value="<%= @strat['description'] %>" /></label>
+  <input type="submit" value="lägg till" />
+</form>

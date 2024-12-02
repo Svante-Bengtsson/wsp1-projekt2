@@ -17,7 +17,7 @@ class Seeder
     db.execute('CREATE TABLE strats (id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name TEXT NOT NULL,
                 description TEXT NOT NULL,
-                rating_tot INTEGER,
+                rating_tot INTEGER NOT NULL DEFAULT 0,
                 rating_amount INTEGER DEFAULT 1)')
   end 
 

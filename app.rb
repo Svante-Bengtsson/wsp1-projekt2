@@ -19,16 +19,39 @@ class App < Sinatra::Base
         @strats = db.execute('SELECT * FROM strats')
         erb(:"stratroulette/strats")
     end
+
+    get '/strats/new' do
+        erb(:"stratroulette/new")
+    end
+
     get '/strats/:id' do | id |
-        @strats = db.execute('SELECT * FROM strats WHERE id = ?', id)
-        @strat = @strats[0]
-        p @strat
+        @strat = db.execute('SELECT * FROM strats WHERE id = ?', id).first
         erb(:"stratroulette/show")
     end
 
-        post '/ratings_update/:id' do | id |
-            p "Form submitted with ID: #{id}, Params: #{params.inspect}"
-            db.execute("UPDATE strats SET rating_tot = rating_tot + ?, rating_amount = rating_amount + 1 WHERE id = ?", [params['rating_tot'], id])
-            redirect("/")
-        end
+    post '/strats/:id/delete' do | id |
+        db.execute("DELETE FROM strats WHERE id = ?", id)
+        redirect("/strats")
+    end
+
+    get '/strats/:id/update' do | id |
+        @strat = db.execute('SELECT * FROM strats WHERE id = ?', id).first
+        erb(:"stratroulette/update")
+    end
+
+    post '/strats/:id/update' do | id |
+        db.execute("UPDATE strats SET name = ?, description = ? WHERE id = ?", [params['strat_name'], params['strat_description'], id])
+        redirect("/strats")
+    end
+
+
+    post '/strats' do
+        db.execute("INSERT INTO strats (name, description, rating_tot) VALUES (?, ?, 0)", [params['strat_name'], params['strat_description']])
+        redirect("/")
+    end
+
+    post '/ratings_update/:id' do | id |
+        db.execute("UPDATE strats SET rating_tot = rating_tot + ?, rating_amount = rating_amount + 1 WHERE id = ?", [params['strat_rating_tot'], id])
+        redirect("/")
+    end
 end

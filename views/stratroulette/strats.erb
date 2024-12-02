@@ -2,18 +2,17 @@
 <ul>
   <% @strats.each do |strat| %>
     <li>
-      <a
-        href="/strats/<%= strat['id'] %>"
-        style="text-decoration: none; color: black"
-      >
+      <a href="/strats/<%= strat['id'] %>" style="text-decoration: none; color: black">
         <%= strat['name'] %>
-      </a>
+      </a> 
+      <form action="/strats/<%= strat['id'] %>/delete" method="post" style="display: inline;"><button type="submit" style="color: red;" >X</button></form>
+      <form action="/strats/<%= strat['id'] %>/update" method="get" style="display: inline;"><button type="submit" style="color: darkgoldenrod;" >Change</button></form>
       <% 
         rating_tot = strat['rating_tot'] || 0
         rating_amount = strat['rating_amount'] || 1
         rating = rating_tot.to_f / rating_amount.to_f
       %>
-      <%= "☆" * rating.to_i + "★" * (10 - rating.to_i) %>
+      <%= "★" * rating.to_i + "☆" * (10 - rating.to_i) %>
     </li>
   <% end %>
 </ul>
