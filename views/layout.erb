@@ -13,6 +13,13 @@
   </header>
   <nav>
     <ul>
+      <% if !!session[:user_id] %>
+      <li><a href="/">mina strats</a></li>
+      <li><a href="/logout">logga ut</a></li>
+      <% else %>
+      <li><a href="/register">registrera</a></li>
+      <li><a href="/login">logga in</a></li>
+      <% end %>
       <li><a href="/">välj ny strat</a></li>
       <li><a href="/strats">alla strats</a></li>
       <li><a href="/strats/new">ny strat</a></li>

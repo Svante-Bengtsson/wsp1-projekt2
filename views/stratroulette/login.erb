@@ -1,0 +1,8 @@
+<% if @login_failed %>
+<h2>Inloggning misslyckades, försök igen</h2>
+<% end %>
+<form action="/login" method="post">
+    <input type="text" name="name" placeholder="Användarnamn" required>
+    <input type="password" name="password" placeholder="Lösenord" required>
+    <input type="submit" value="logga in">
+</form>

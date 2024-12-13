@@ -19,6 +19,9 @@ class Seeder
                 description TEXT NOT NULL,
                 rating_tot INTEGER NOT NULL DEFAULT 0,
                 rating_amount INTEGER DEFAULT 1)')
+    db.execute('CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT UNIQUE NOT NULL,
+                password_hash TEXT NOT NULL)')
   end 
 
   def self.populate_tables
