@@ -13,7 +13,8 @@
   </header>
   <nav>
     <ul>
-      <% if !!session[:user_id] %>
+      <% p session[:user_id] %>
+      <% if !session[:user_id].nil? %>
       <li><a href="/">mina strats</a></li>
       <li><a href="/logout">logga ut</a></li>
       <% else %>

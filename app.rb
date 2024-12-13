@@ -1,6 +1,8 @@
 enable :sessions
 class App < Sinatra::Base
 
+    enable :sessions
+
     def db
         return @db if @db
         @db = SQLite3::Database.new('db/stratroulette.sqlite')
@@ -97,8 +99,9 @@ class App < Sinatra::Base
         user = db.execute("SELECT * FROM users WHERE name = ?", [username]).first
         password_hashed = user["password_hash"].to_s
         db_id = user["id"].to_i
-        if  BCrypt::Password.create(password) == password_hashed
+        if  BCrypt::Password.new(password_hashed) == password
             session[:user_id] = db_id
+            p session[:user_id]
             redirect '/'
         else
             status 401
