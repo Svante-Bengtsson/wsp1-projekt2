@@ -50,6 +50,15 @@ class App < Sinatra::Base
         @login_failed = true
         erb(:"stratroulette/login")
     end
+    
+    get '/user_strats/:id' do | id |
+        @strats = db.execute('SELECT * FROM strats WHERE user_id = ?', id)
+        @id = id
+        if session[:user_id].to_i != id.to_i
+            redirect '/'
+        end
+        erb(:"stratroulette/show_profile")
+    end
 
     post '/strats/:id/delete' do | id |
         db.execute("DELETE FROM strats WHERE id = ?", id)
@@ -68,7 +77,7 @@ class App < Sinatra::Base
 
 
     post '/strats' do
-        db.execute("INSERT INTO strats (name, description, rating_tot) VALUES (?, ?, 0)", [params['strat_name'], params['strat_description']])
+        db.execute("INSERT INTO strats (name, description, rating_tot, user_id) VALUES (?, ?, 0, ?)", [params['strat_name'], params['strat_description'], session[:user_id]])
         redirect("/")
     end
 
@@ -84,7 +93,7 @@ class App < Sinatra::Base
         existing = db.execute("SELECT * FROM users WHERE name = ?", [username]).first
 
         if existing
-            halt 400, "Username already taken."
+            status 400
         else
             password_hashed = BCrypt::Password.create(password)
             db.execute("INSERT INTO users (name, password_hash) VALUES (?, ?)",[username, password_hashed])
@@ -97,9 +106,14 @@ class App < Sinatra::Base
         password = params[:password]
 
         user = db.execute("SELECT * FROM users WHERE name = ?", [username]).first
-        password_hashed = user["password_hash"].to_s
+
+        if user.nil?
+            status 401
+            redirect '/login_failed'
+        end
         db_id = user["id"].to_i
-        if  BCrypt::Password.new(password_hashed) == password
+        password_hashed = user["password_hash"].to_s
+        if BCrypt::Password.new(password_hashed) == password
             session[:user_id] = db_id
             p session[:user_id]
             redirect '/'

@@ -13,17 +13,16 @@
   </header>
   <nav>
     <ul>
-      <% p session[:user_id] %>
       <% if !session[:user_id].nil? %>
-      <li><a href="/">mina strats</a></li>
+      <li><a href="/user_strats/<%= session[:user_id] %>">mina strats</a></li>
       <li><a href="/logout">logga ut</a></li>
+      <li><a href="/strats/new">ny strat</a></li>
       <% else %>
       <li><a href="/register">registrera</a></li>
       <li><a href="/login">logga in</a></li>
       <% end %>
       <li><a href="/">välj ny strat</a></li>
       <li><a href="/strats">alla strats</a></li>
-      <li><a href="/strats/new">ny strat</a></li>
     </ul>
   </nav>
   <hr>
