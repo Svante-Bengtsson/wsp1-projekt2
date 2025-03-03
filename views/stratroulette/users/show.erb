@@ -9,7 +9,7 @@
         <%= strat['name'] %>
       </a> 
       <form action="/strats/<%= strat['id'] %>/delete" method="post" style="display: inline;"><button type="submit" style="color: red;" >X</button></form>
-      <form action="/strats/<%= strat['id'] %>/update" method="get" style="display: inline;"><button type="submit" style="color: darkgoldenrod;" >Change</button></form>
+      <form action="/strats/<%= strat['id'] %>/edit" method="get" style="display: inline;"><button type="submit" style="color: darkgoldenrod;" >Change</button></form>
       <% 
         rating_tot = strat['rating_tot'] || 0
         rating_amount = strat['rating_amount'] || 1

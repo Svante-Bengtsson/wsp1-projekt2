@@ -12,79 +12,92 @@ class App < Sinatra::Base
 
     get '/' do
         @strats = db.execute('SELECT * FROM strats') 
+        @games = db.execute('SELECT * FROM games')
         check = false
         numb = rand(0...@strats.length)
         @strat = @strats[numb]
         erb(:"stratroulette/index")
-    end
+    end 
 
+    #strats#index
     get '/strats' do
         @strats = db.execute('SELECT * FROM strats')
-        erb(:"stratroulette/strats")
+        erb(:"stratroulette/strats/index")
     end
 
+    #strats#new
     get '/strats/new' do
-        erb(:"stratroulette/new")
+        erb(:"stratroulette/strats/new")
     end
 
+    #strats#show
     get '/strats/:id' do | id |
         @strat = db.execute('SELECT * FROM strats WHERE id = ?', id).first
-        erb(:"stratroulette/show")
+        erb(:"stratroulette/strats/show")
     end
  
+    #user#logout
     get '/logout' do
         session.clear
         redirect '/'
     end
 
+    #user#register
     get '/register' do
-        erb(:"stratroulette/register")
+        erb(:"stratroulette/users/register")
     end
 
+    #user#register
     get '/login' do
         @login_failed = false
-        erb(:"stratroulette/login")
+        erb(:"stratroulette/users/login")
     end
 
     get '/login_failed' do
         @login_failed = true
-        erb(:"stratroulette/login")
+        erb(:"stratroulette/users/login")
     end
     
-    get '/user_strats/:id' do | id |
+    #user#show
+    get '/user/:id' do | id |
         @strats = db.execute('SELECT * FROM strats WHERE user_id = ?', id)
         @id = id
         if session[:user_id].to_i != id.to_i
             redirect '/'
         end
-        erb(:"stratroulette/show_profile")
+        erb(:"stratroulette/users/show")
     end
 
+    #strats#destroy
     post '/strats/:id/delete' do | id |
         db.execute("DELETE FROM strats WHERE id = ?", id)
         redirect("/strats")
     end
 
-    get '/strats/:id/update' do | id |
+    #strats#edit
+    get '/strats/:id/edit' do | id |
         @strat = db.execute('SELECT * FROM strats WHERE id = ?', id).first
-        erb(:"stratroulette/update")
+        erb(:"stratroulette/strats/edit")
     end
 
+    #strats#update
     post '/strats/:id/update' do | id |
         db.execute("UPDATE strats SET name = ?, description = ? WHERE id = ?", [params['strat_name'], params['strat_description'], id])
         redirect("/strats")
     end
 
-
+    #strats#new
     post '/strats' do
         db.execute("INSERT INTO strats (name, description, rating_tot, user_id) VALUES (?, ?, 0, ?)", [params['strat_name'], params['strat_description'], session[:user_id]])
         redirect("/")
     end
 
+
     post '/ratings_update/:id' do | id |
         db.execute("UPDATE strats SET rating_tot = rating_tot + ?, rating_amount = rating_amount + 1 WHERE id = ?", [params['strat_rating_tot'], id])
         redirect("/")
     end
+
 
     post '/register' do
         username = params[:name]
@@ -94,6 +107,7 @@ class App < Sinatra::Base
 
         if existing
             status 400
+            redirect '/register'
         else
             password_hashed = BCrypt::Password.create(password)
             db.execute("INSERT INTO users (name, password_hash) VALUES (?, ?)",[username, password_hashed])
@@ -123,5 +137,17 @@ class App < Sinatra::Base
         end
 
 
+    end
+    get '/games' do
+        @games = db.execute('SELECT * FROM games')
+        erb(:"stratroulette/games/index")
+    end
+    get '/games/:id' do | id |
+        @game = db.execute('SELECT * FROM games WHERE id = ?', id).first    
+        @strats = db.execute('SELECT * FROM strats WHERE game_id = ?', id) 
+        check = false
+        numb = rand(0...@strats.length)
+        @strat = @strats[numb]
+        erb(:"stratroulette/games/show")
     end
 end

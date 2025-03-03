@@ -1,0 +1,13 @@
+<h2>alla strats:</h2>
+<ul>
+  <% @games.each do |game| %>
+    <li>
+      <a href="/games/<%= game['id'] %>" style="text-decoration: none; color: black">
+        <%= game['name'] %>
+      </a>
+      <p>
+      <%= game['description'] %>
+      </p>
+    </li>
+  <% end %>
+</ul>

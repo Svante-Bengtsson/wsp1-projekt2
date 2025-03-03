@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekt #2</title>
     <link rel="stylesheet" type="text/css" href="/style.css?<%=Time.now.to_i%>">
+    <link rel="icon" href="../public/favicon.ico">
 </head>
 <body>
   <header>
-    <img src="/img/glhf.png">
     <h1>Strat Roulette</h1>
   </header>
   <nav>
     <ul>
       <% if !session[:user_id].nil? %>
-      <li><a href="/user_strats/<%= session[:user_id] %>">mina strats</a></li>
+      <li><a href="/user/<%= session[:user_id] %>">mina strats</a></li>
       <li><a href="/logout">logga ut</a></li>
       <li><a href="/strats/new">ny strat</a></li>
       <% else %>
@@ -23,6 +23,7 @@
       <% end %>
       <li><a href="/">välj ny strat</a></li>
       <li><a href="/strats">alla strats</a></li>
+      <li><a href="/games">alla spel</a></li>
     </ul>
   </nav>
   <hr>

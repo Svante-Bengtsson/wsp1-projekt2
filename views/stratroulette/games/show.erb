@@ -1,15 +1,5 @@
-<h1>Games</h1>
-<ul>
-  <% @games.each do |game| %>
-    <li>
-      <a href="/games/<%= game['id'] %>" style="text-decoration: none; color: black">
-        <%= game['name'] %>
-      </a>
-      <%= game['description'] %>
-    </li>
-  <% end %>
-</ul>
-<h3>Strat:</h3>
+<h2>Name: <%= @game['name'] %></h2>
+<p><%= @game['description'] %></p>
 <h2>Name: <%= @strat['name'] %></h2>
 <p><%= @strat['description'] %></p>
 <p>
