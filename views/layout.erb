@@ -14,6 +14,10 @@
   <nav>
     <ul>
       <% if !session[:user_id].nil? %>
+      <% p @admin%>
+        <% if @admin == 1%>
+          <li><a href="/user/<%= session[:user_id] %>">adminsida yao</a></li>
+        <% end %>
       <li><a href="/user/<%= session[:user_id] %>">mina strats</a></li>
       <li><a href="/logout">logga ut</a></li>
       <li><a href="/strats/new">ny strat</a></li>

@@ -6,6 +6,9 @@
   <% 
     rating_tot = @strat['rating_tot'] || 0
     rating_amount = @strat['rating_amount'] || 1
+    if rating_amount == 0
+        rating_amount = 1
+    end
     rating = rating_tot.to_f / rating_amount.to_f
   %>
   <%= "★" * rating.to_i + "☆" * (10 - rating.to_i) %>

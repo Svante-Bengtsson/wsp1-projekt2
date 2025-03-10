@@ -10,6 +10,16 @@ class App < Sinatra::Base
         return @db
     end
 
+    before do
+        admin = db.execute('SELECT * FROM users WHERE id = ?', session[:user_id].to_i).first
+        p admin
+        if !admin == nil 
+            @admin = admin["admin"]
+        else
+            @admin = 0
+        end
+    end
+
     get '/' do
         @strats = db.execute('SELECT * FROM strats') 
         @games = db.execute('SELECT * FROM games')
@@ -98,7 +108,7 @@ class App < Sinatra::Base
         redirect("/")
     end
 
-
+    #user#new
     post '/register' do
         username = params[:name]
         password = params[:password]

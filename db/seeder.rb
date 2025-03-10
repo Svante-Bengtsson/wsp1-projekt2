@@ -21,7 +21,7 @@ class Seeder
         name TEXT NOT NULL,
         description TEXT NOT NULL,
         rating_tot INTEGER NOT NULL DEFAULT 0,
-        rating_amount INTEGER DEFAULT 1,
+        rating_amount INTEGER DEFAULT 0,
         user_id INTEGER NOT NULL,
         game_id INTEGER NOT NULL
       )
@@ -30,7 +30,8 @@ class Seeder
       CREATE TABLE users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT UNIQUE NOT NULL,
-        password_hash TEXT NOT NULL
+        password_hash TEXT NOT NULL,
+        admin INTEGER DEFAULT 0
       )
     ')
     db.execute('
@@ -46,6 +47,7 @@ class Seeder
     db.execute('INSERT INTO games (name, description) VALUES ("gloober", "fing feng huan shi")')
     db.execute('INSERT INTO strats (name, description, rating_tot, user_id, game_id) VALUES ("gloob", "ma schloob", 0, 1, 1)')
     db.execute('INSERT INTO strats (name, description, rating_tot, user_id, game_id) VALUES ("goop", "ma schoop", 0, 1, 1)')
+    db.execute('INSERT INTO users (name, password_hash, admin) VALUES ("admin", ?, TRUE)', "$2a$12$mqGpcE016gCJ19NYwFRaAelRJzgMBsdK7Aj8cS4SvOrOHoz5WxF/K")
   end
   private
   def self.db
