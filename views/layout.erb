@@ -9,14 +9,14 @@
 </head>
 <body>
   <header>
-    <h1>Strat Roulette</h1>
+    <h1><a href="/" style="text-decoration: none; color: #666;">Strat Roulette</a></h1>
   </header>
   <nav>
     <ul>
       <% if !session[:user_id].nil? %>
-      <% p @admin%>
         <% if @admin == 1%>
           <li><a href="/user/<%= session[:user_id] %>">adminsida yao</a></li>
+          <li><a href="/strats">alla strats</a></li>
         <% end %>
       <li><a href="/user/<%= session[:user_id] %>">mina strats</a></li>
       <li><a href="/logout">logga ut</a></li>
@@ -25,8 +25,6 @@
       <li><a href="/register">registrera</a></li>
       <li><a href="/login">logga in</a></li>
       <% end %>
-      <li><a href="/">välj ny strat</a></li>
-      <li><a href="/strats">alla strats</a></li>
       <li><a href="/games">alla spel</a></li>
     </ul>
   </nav>

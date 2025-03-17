@@ -12,12 +12,12 @@ class App < Sinatra::Base
 
     before do
         admin = db.execute('SELECT * FROM users WHERE id = ?', session[:user_id].to_i).first
-        p admin
         if !admin == nil 
             @admin = admin["admin"]
         else
             @admin = 0
         end
+        @rut = request.fullpath
     end
 
     get '/' do
