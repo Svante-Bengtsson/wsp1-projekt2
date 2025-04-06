@@ -20,6 +20,10 @@ class User
     end
 
     def self.delete(db, id)
+        stratamount = db.execute("SELECT * FROM strats WHERE user_id = ?", id).length
+        for i in 0...stratamount.to_i
+            db.execute("DELETE FROM strats WHERE user_id = ?", id)
+        end
         db.execute("DELETE FROM users WHERE id = ?", id)
     end
 end

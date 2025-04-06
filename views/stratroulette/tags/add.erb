@@ -1,0 +1,20 @@
+<a href="/games/<%= @id %>" style="text-decoration: none; color: black">< tillbaka</a>
+<h2>Nuvarande tags:</h2>
+<p>
+    <% @tags.each_with_index do |tag, index| %>
+      <a href="/tags/<%= tag['id'] %>" style="text-decoration: none; color: black">
+        <%= tag['name'] %>
+      </a><%= "," unless index == @tags.size - 1 %>
+    <% end %>
+</p>
+<h2>Tags:</h2>
+
+<p>
+    <% @tags.each_with_index do |tag, index| %>
+        <form action="/tags/add/<%= @id %>" method="post">
+            <input type="hidden" value="<%= tag['id'] %>" name="tag_id">
+            <input type="submit" value="<%= tag['name'] %>">
+        </form>
+      <%= "," unless index == @tags.size - 1 %>
+    <% end %>
+</p>

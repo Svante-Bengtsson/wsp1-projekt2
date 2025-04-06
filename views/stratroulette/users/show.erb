@@ -1,7 +1,8 @@
 <h2>strats du skapat:</h2>
 <ul>
 <% p session[:user_id] %>
-<% if session[:user_id].to_i == @id.to_i %>
+<% $strat_amount = 0 %>
+<% if session[:user_id].to_i == @id.to_i && !@empty %>
   <% @strats.each do |strat| %>¨
   
     <li>
@@ -20,6 +21,10 @@
       %>
       <%= "★" * rating.to_i + "☆" * (10 - rating.to_i) %>
     </li>
+    <% $strat_amount += 1%>
   <% end %>
 <% end %>
 </ul>
+<form action="/users/<%= session[:user_id] %>/delete" method="post" style="display: inline;">
+<button type="submit" style="color: red;">Radera Konto</button>
+</form>

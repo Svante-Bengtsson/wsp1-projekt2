@@ -18,9 +18,8 @@
           <li><a href="/user/<%= session[:user_id] %>">adminsida yao</a></li>
           <li><a href="/strats">alla strats</a></li>
         <% end %>
-      <li><a href="/user/<%= session[:user_id] %>">mina strats</a></li>
+      <li><a href="/user/<%= session[:user_id] %>">min sida</a></li>
       <li><a href="/logout">logga ut</a></li>
-      <li><a href="/strats/new">ny strat</a></li>
       <% else %>
       <li><a href="/register">registrera</a></li>
       <li><a href="/login">logga in</a></li>
@@ -32,7 +31,12 @@
   <%= yield %>
   <hr>
   <footer>
-    <p>gluh</p>
+  <h2>Lägg till spel:</h2>
+    <form action="/games/new" method="post">
+      <label>Namn: <input name="game_name" type="text"/></label>
+      <label>Beskrivning: <input name="game_description" type="text"/></label>
+      <input type="submit" value="lägg till"/>
+    </form>
   </footer>
 </body>
 </html>

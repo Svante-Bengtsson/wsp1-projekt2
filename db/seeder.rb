@@ -12,6 +12,8 @@ class Seeder
     db.execute('DROP TABLE IF EXISTS strats')
     db.execute('DROP TABLE IF EXISTS users')
     db.execute('DROP TABLE IF EXISTS games')
+    db.execute('DROP TABLE IF EXISTS gametags')
+    db.execute('DROP TABLE IF EXISTS tags')
   end
 
   def self.create_tables
@@ -41,6 +43,21 @@ class Seeder
         description TEXT NOT NULL
       )
     ')
+    db.execute('
+      CREATE TABLE gametags (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        game_id INTEGER NOT NULL,
+        tag_id INTEGER NOT NULL
+      )
+    ')
+    db.execute('
+      CREATE TABLE tags (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        description TEXT NOT NULL
+      )
+    ')
+
   end
 
   def self.populate_tables
@@ -48,6 +65,8 @@ class Seeder
     db.execute('INSERT INTO strats (name, description, rating_tot, user_id, game_id) VALUES ("gloob", "ma schloob", 0, 1, 1)')
     db.execute('INSERT INTO strats (name, description, rating_tot, user_id, game_id) VALUES ("goop", "ma schoop", 0, 1, 1)')
     db.execute('INSERT INTO users (name, password_hash, admin) VALUES ("admin", ?, TRUE)', "$2a$12$mqGpcE016gCJ19NYwFRaAelRJzgMBsdK7Aj8cS4SvOrOHoz5WxF/K")
+    db.execute('INSERT INTO tags (name, description) VALUES ("fps", "shooty, shooty, bang bang")')
+    db.execute('INSERT INTO gametags (game_id, tag_id) VALUES (1, 1)')
   end
   private
   def self.db

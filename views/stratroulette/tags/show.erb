@@ -1,0 +1,14 @@
+<h2>Name: <%= @tag['name'] %></h2>
+<p><%= @tag['description'] %></p>
+<ul>
+  <% @games.each do |game| %>
+    <li>
+      <a href="/games/<%= game['id'] %>" style="text-decoration: none; color: black">
+        <%= game['name'] %>
+      </a>
+      <p>
+      <%= game['description'] %>
+      </p>
+    </li>
+  <% end %>
+</ul>

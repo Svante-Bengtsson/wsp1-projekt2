@@ -14,6 +14,8 @@
         rating = rating_tot.to_f / rating_amount.to_f
       %>
       <%= "★" * rating.to_i + "☆" * (10 - rating.to_i) %>
+      <form action="/strats/<%= strat['id'] %>/delete" method="post" style="display: inline;"><button type="submit" style="color: red;" >X</button></form>
+      <form action="/strats/<%= strat['id'] %>/edit" method="get" style="display: inline;"><button type="submit" style="color: darkgoldenrod;" >Edit</button></form>
     </li>
   <% end %>
 </ul>
