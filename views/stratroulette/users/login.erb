@@ -1,5 +1,6 @@
 <% if @login_failed %>
 <h2>Inloggning misslyckades, försök igen</h2>
+<p>kan bero på fel lösenord eller användarnamn eller så har du försökt att logga in med fel uppgifter mer än fem gånger, vänta isåfall 25 minuter innan du försöker igen </p>
 <% end %>
 <form action="/login" method="post">
     <input type="text" name="name" placeholder="Användarnamn" required>

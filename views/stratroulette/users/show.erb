@@ -9,8 +9,8 @@
       <a href="/strats/<%= strat['id'] %>" style="text-decoration: none; color: black">
         <%= strat['name'] %>
       </a> 
-      <form action="/strats/<%= strat['id'] %>/delete" method="post" style="display: inline;"><button type="submit" style="color: red;" >X</button></form>
-      <form action="/strats/<%= strat['id'] %>/edit" method="get" style="display: inline;"><button type="submit" style="color: darkgoldenrod;" >Edit</button></form>
+      <form action="/strats/<%= strat['id'] %>/delete" method="post" style="display: inline;"><input type="hidden" name="authenticity_token" value="<%= env['rack.session'][:csrf] %>"><button type="submit" style="color: red;" >X</button></form>
+      <form action="/strats/<%= strat['id'] %>/edit" method="get" style="display: inline;"><input type="hidden" name="authenticity_token" value="<%= env['rack.session'][:csrf] %>"><button type="submit" style="color: darkgoldenrod;" >Edit</button></form>
       <% 
         rating_tot = strat['rating_tot'] || 0
         rating_amount = strat['rating_amount'] || 1
@@ -26,5 +26,6 @@
 <% end %>
 </ul>
 <form action="/users/<%= session[:user_id] %>/delete" method="post" style="display: inline;">
-<button type="submit" style="color: red;">Radera Konto</button>
+  <button type="submit" style="color: red;">Radera Konto</button>
+  <input type="hidden" name="authenticity_token" value="<%= env['rack.session'][:csrf] %>">
 </form>

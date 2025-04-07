@@ -28,6 +28,7 @@
     <input type="hidden" name="has_changed" id="hasChanged" value="0"/>
     <label>Betyg 0 - 10 <input name="strat_rating_tot" type="number" value="<%= rating.to_i %>" min="0" max="10"/></label>
     <input type="hidden" value="<%= @id %>" name="game_id"/>
+    <input type="hidden" name="authenticity_token" value="<%= env['rack.session'][:csrf] %>">
     <input type="submit" value="nästa strat" />
   </form> 
 <% end %>
@@ -44,6 +45,7 @@
   <form action="/strats" method="post">
     <label>Namn: <input name="strat_name" type="text"/></label>
     <label>Beskrivning: <input name="strat_description" type="text"/></label>
+    <input type="hidden" name="authenticity_token" value="<%= env['rack.session'][:csrf] %>">
     <input type="hidden" value="<%= @id %>" name="game_id"/>
     <input type="submit" value="lägg till"/>
   </form>

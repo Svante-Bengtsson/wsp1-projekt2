@@ -14,6 +14,7 @@ class Seeder
     db.execute('DROP TABLE IF EXISTS games')
     db.execute('DROP TABLE IF EXISTS gametags')
     db.execute('DROP TABLE IF EXISTS tags')
+    db.execute('DROP TABLE IF EXISTS logins')
   end
 
   def self.create_tables
@@ -57,6 +58,12 @@ class Seeder
         description TEXT NOT NULL
       )
     ')
+    db.execute('
+      CREATE TABLE logins (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )')
 
   end
 
