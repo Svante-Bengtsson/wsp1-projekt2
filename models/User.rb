@@ -4,11 +4,11 @@ class User
     end
 
     def self.selectFromName(db, name)
-        return db.execute('SELECT * FROM users WHERE name = ?', name)
+        return db.execute('SELECT * FROM users WHERE name = ?', name).first
     end
 
     def self.selectFromId(db, id)
-        return db.execute('SELECT * FROM users WHERE id = ?', id)
+        return db.execute('SELECT * FROM users WHERE id = ?', id).first
     end
 
     def self.create(db, name, password_hashed)

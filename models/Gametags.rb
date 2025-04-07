@@ -5,7 +5,7 @@ class Gametag
     end
 
     def self.selectFromId(db, id)
-        return db.execute('SELECT * FROM gametags WHERE id = ?', id)
+        return db.execute('SELECT * FROM gametags WHERE id = ?', id).first
     end
 
     def self.selectFromGameId(db, game_id)

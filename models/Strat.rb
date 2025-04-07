@@ -4,11 +4,11 @@ class Strat
     end
 
     def self.selectFromName(db, name)
-        return db.execute('SELECT * FROM strats WHERE name = ?', name)
+        return db.execute('SELECT * FROM strats WHERE name = ?', name).first
     end
 
     def self.selectFromId(db, id)
-        return db.execute('SELECT * FROM strats WHERE id = ?', id)
+        return db.execute('SELECT * FROM strats WHERE id = ?', id).first
     end
 
     def self.selectFromGameId(db, game_id)

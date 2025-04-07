@@ -1,8 +1,8 @@
 <a href="/games/<%= @id %>" style="text-decoration: none; color: black">< tillbaka</a>
 <h2>Nuvarande tags:</h2>
 <p>
-    <% @tags.each_with_index do |tag, index| %>
-      <a href="/tags/<%= tag['id'] %>" style="text-decoration: none; color: black">
+    <% @alreadytags.each_with_index do |tag, index| %>
+      <a href="/tags/<%= tag['id'].to_s %>" style="text-decoration: none; color: black">
         <%= tag['name'] %>
       </a><%= "," unless index == @tags.size - 1 %>
     <% end %>
@@ -16,5 +16,13 @@
             <input type="submit" value="<%= tag['name'] %>">
         </form>
       <%= "," unless index == @tags.size - 1 %>
-    <% end %>
+    <% end %>   
 </p>
+
+<h2>Lägg till tags:</h2>
+<form action="/tags/new" method="post">
+    <label>Namn: <input name="tag_name" type="text"/></label>
+    <label>Beskrivning: <input name="tag_description" type="text"/></label>
+    <input type="hidden" value="<%= @id %>" name="game_id">
+    <input type="submit" value="lägg till"/>
+</form>
