@@ -1,11 +1,17 @@
 <h2>Name: <%= @game['name'] %></h2>
 <p><%= @game['description'] %></p>
 <p>Tags:
-<% @tags.each_with_index do |tag, index| %>
+<% 
+if @tags != nil
+  @tags.each_with_index do |tag, index| 
+%>
   <a href="/tags/<%= tag['id'] %>" style="text-decoration: none; color: blue">
     <%= tag['name'] %>
   </a><%= "," unless index == @tags.size - 1 %>
-<% end %>
+<% 
+  end
+end 
+%>
 </p>
 <a href="/tags/add/<%= @game['id'] %>" style="text-decoration: none; color: blue">
     lägg till tag!
@@ -37,6 +43,7 @@
   <% if @admin == 1%>
     <a href="">alla strats</a>
     <form action="/games/<%= @id %>/delete" method="post" style="display: inline;">
+      <input type="hidden" name="authenticity_token" value="<%= session[:csrf] %>">
       <button type="submit" style="color: red;">Radera spel</button>
     </form>
 

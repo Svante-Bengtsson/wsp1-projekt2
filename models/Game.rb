@@ -37,9 +37,12 @@ class Game
         for i in 0...strats.to_i
             db.execute("DELETE FROM strats WHERE game_id = ?", id)
         end
-        tags = Gametag.selectFromGameId(db, id).first.length
-        for i in 0...tags.to_i
-            db.execute("DELETE FROM gametags WHERE game_id = ?", id)
+        tags = Gametag.selectFromGameId(db, id).first
+        if tags != nil
+            tag = Gametag.selectFromGameId(db, id).first.length
+            for i in 0...tags.to_i
+                db.execute("DELETE FROM gametags WHERE game_id = ?", id)
+            end
         end
         db.execute("DELETE FROM games WHERE id = ?", id)
     end

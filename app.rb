@@ -105,8 +105,9 @@ class App < Sinatra::Base
     #strats#destroy
     post '/strats/:id/delete' do | id |
         if @role == 'standard' or @role == 'admin'
-            Strat.delete(db, id)
-        
+            if Strat.selectFromId(db, id)['user_id'] == session[:user_id]
+                Strat.delete(db, id)
+            end
             redirect("/user/" + session[:user_id].to_s)
         else
             redirect '/'
@@ -266,4 +267,6 @@ class App < Sinatra::Base
         Tag.create(db, params['tag_name'], params['tag_description'])
         redirect '/tags/add/' + params['game_id'].to_s
     end
+
+    
 end
