@@ -251,9 +251,12 @@ class App < Sinatra::Base
 
         @tags = Tag.all(db)
         @alreadytags = Tag.selectFromGameId(db, id)
-        @alreadytags.each do |alreadytag|
-            @tags = @tags - [alreadytag]
+        if @alredytags != nil
+            @alreadytags.each do |alreadytag|
+                @tags = @tags - [alreadytag]
+            end
         end
+        
         @id = id
         erb(:"stratroulette/tags/add")
     end

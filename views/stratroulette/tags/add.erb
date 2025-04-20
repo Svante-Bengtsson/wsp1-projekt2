@@ -1,11 +1,17 @@
 <a href="/games/<%= @id %>" style="text-decoration: none; color: black">< tillbaka</a>
 <h2>Nuvarande tags:</h2>
 <p>
-    <% @alreadytags.each_with_index do |tag, index| %>
+    <% 
+    if @alreadytags != nil
+      @alreadytags.each_with_index do |tag, index| 
+    %>
       <a href="/tags/<%= tag['id'].to_s %>" style="text-decoration: none; color: black">
         <%= tag['name'] %>
       </a><%= "," unless index == @tags.size - 1 %>
-    <% end %>
+    <% 
+      end 
+    end
+    %>
 </p>
 <h2>Tags:</h2>
 

@@ -40,7 +40,7 @@ class Game
         tags = Gametag.selectFromGameId(db, id).first
         if tags != nil
             tag = Gametag.selectFromGameId(db, id).first.length
-            for i in 0...tags.to_i
+            for i in 0...tags.length
                 db.execute("DELETE FROM gametags WHERE game_id = ?", id)
             end
         end
