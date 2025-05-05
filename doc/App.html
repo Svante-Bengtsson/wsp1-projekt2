@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: App
+  
+    &mdash; Documentation by YARD 0.9.37
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "App";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (A)</a> &raquo;
+    
+    
+    <span class="title">App</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: App
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Sinatra::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Sinatra::Base</li>
+          
+            <li class="next">App</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>app.rb</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2F-instance_method" title="#/ (instance method)">#<strong>/</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>redirectar till /games.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fgames-instance_method" title="#/games (instance method)">#<strong>/games</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>lägger till ett nytt spel baserat på medskickade params och sedan omdirigerar till det nya spelets sida.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fgames%2F:id-instance_method" title="#/games/:id (instance method)">#<strong>/games/:id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>laddar sidan för ett vist spel beroende på id samt slumpar fram en strat att visa på sidan - views/stratroulette/games/show.erb.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fgames%2F:id%2Fdelete-instance_method" title="#/games/:id/delete (instance method)">#<strong>/games/:id/delete</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>raderar ett visst spel beroende på id och omdirigerar sen till hemsidan.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Flogin-instance_method" title="#/login (instance method)">#<strong>/login</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>loggar in en användare baserat på medskickade params och did´rigerar därefter vidare baserat på behörighet.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Flogin_failed-instance_method" title="#/login_failed (instance method)">#<strong>/login_failed</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>sätter @login_failed till true och laddar in formuläret för att logga in - views/stratroulette/users/login.erb.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Flogout-instance_method" title="#/logout (instance method)">#<strong>/logout</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>loggar ut användaren om de är inloggader(clearar session) och sen dirigerar vidare till hemsidan.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fratings_update%2F:id-instance_method" title="#/ratings_update/:id (instance method)">#<strong>/ratings_update/:id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>uppdaterar ratings för en viss strat beroende på id och medskickade params.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fregister-instance_method" title="#/register (instance method)">#<strong>/register</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>skapar en ny användare baserat på medskickade params och redirectar sedan til /login.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fstrats-instance_method" title="#/strats (instance method)">#<strong>/strats</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>skapar en nu strat dirigerar sedan vidare beroende på behörighet.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fstrats%2F:id-instance_method" title="#/strats/:id (instance method)">#<strong>/strats/:id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>laddar in all infor för en viss strat - views/stratroulette/strats/show.erb.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fstrats%2F:id%2Fdelete-instance_method" title="#/strats/:id/delete (instance method)">#<strong>/strats/:id/delete</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>raderar en strat om man har behörigheten for det och dirigerar sedan en vidare beroende på behörighet.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fstrats%2F:id%2Fedit-instance_method" title="#/strats/:id/edit (instance method)">#<strong>/strats/:id/edit</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>laddar in sidan för att redigera en viss strat beroende på id om man har behörighet och digigerar sedan vidare beroende på behörighet.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fstrats%2F:id%2Fupdate-instance_method" title="#/strats/:id/update (instance method)">#<strong>/strats/:id/update</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>updaterar straten beroende på id om man har behörighet och dirigerar sedan vidare beroende på behörighet.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fstrats%2Fnew-instance_method" title="#/strats/new (instance method)">#<strong>/strats/new</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>laddar in formuläret för att skapa en ny strat - views/stratroulette/strats/new.erb.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Ftags-instance_method" title="#/tags (instance method)">#<strong>/tags</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>lägger till en viss tag beroende på medckikade params och redirectar sedan till sidan för att lägga till tags på ett vist spel beroende på inskickande parametrar.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Ftags%2F:id-instance_method" title="#/tags/:id (instance method)">#<strong>/tags/:id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>laddar sidan för en viss tag beroende på id  - views/stratroulette/tags/show.erb.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Ftags%2Fadd%2F:id-instance_method" title="#/tags/add/:id (instance method)">#<strong>/tags/add/:id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>lägger till en viss tag beroende på medskickade params till ett visst spel beroende på id och redirectar sedan till sidan för att lägga till tags på spelet.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fuser%2F:id-instance_method" title="#/user/:id (instance method)">#<strong>/user/:id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>laddar in användarsidan för en viss användare beronde på id - views/stratroulette/users/show.erb.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2Fusers%2F:id%2Fdelete-instance_method" title="#/users/:id/delete (instance method)">#<strong>/users/:id/delete</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>raderar en viss strat beroende på id och redirectar sedan till hemsidan.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#before-instance_method" title="#before (instance method)">#<strong>before</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>en funktion som körs före varenda route, håller koll på vilken behörighet användaren har, returnar inget men sätter några variabler.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#db-instance_method" title="#db (instance method)">#<strong>db</strong>  &#x21d2; SQLite3::Database </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>en funktion som returnar datatbasen så att man enklare kan pilla i databasem.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="/-instance_method">
+  
+    #<strong>/</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>redirectar till /games</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52
+53
+54
+55
+56
+57
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 50</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span>
+    <span class='ivar'>@strats</span> <span class='op'>=</span> <span class='const'>Strat</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='rparen'>)</span>
+    <span class='ivar'>@games</span> <span class='op'>=</span> <span class='const'>Game</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_check'>check</span> <span class='op'>=</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_numb'>numb</span> <span class='op'>=</span> <span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>0</span><span class='op'>...</span><span class='ivar'>@strats</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+    <span class='ivar'>@strat</span> <span class='op'>=</span> <span class='ivar'>@strats</span><span class='lbracket'>[</span><span class='id identifier rubyid_numb'>numb</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_redirect'>redirect</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/games</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/index&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/games-instance_method">
+  
+    #<strong>/games</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>lägger till ett nytt spel baserat på medskickade params och sedan omdirigerar till det nya spelets sida</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+248
+249
+250
+251</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 248</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/games</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span>
+    <span class='ivar'>@games</span> <span class='op'>=</span> <span class='const'>Game</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/games/index&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/games/:id-instance_method">
+  
+    #<strong>/games/:id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>laddar sidan för ett vist spel beroende på id samt slumpar fram en strat att visa på sidan - views/stratroulette/games/show.erb</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 256</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/games/:id</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>|</span>
+    <span class='ivar'>@empty</span> <span class='op'>=</span> <span class='kw'>false</span>
+    <span class='ivar'>@tags</span> <span class='op'>=</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_selectFromGameId'>selectFromGameId</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='ivar'>@game</span> <span class='op'>=</span> <span class='const'>Game</span><span class='period'>.</span><span class='id identifier rubyid_selectFromId'>selectFromId</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='ivar'>@strats</span> <span class='op'>=</span> <span class='const'>Strat</span><span class='period'>.</span><span class='id identifier rubyid_selectFromGameId'>selectFromGameId</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_check'>check</span> <span class='op'>=</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_numb'>numb</span> <span class='op'>=</span> <span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>0</span><span class='op'>...</span><span class='ivar'>@strats</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='ivar'>@strats</span> <span class='op'>!=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+        <span class='ivar'>@strat</span> <span class='op'>=</span> <span class='ivar'>@strats</span><span class='lbracket'>[</span><span class='id identifier rubyid_numb'>numb</span><span class='rbracket'>]</span>
+    <span class='kw'>else</span>
+        <span class='ivar'>@empty</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='kw'>end</span>
+    <span class='ivar'>@id</span> <span class='op'>=</span> <span class='id identifier rubyid_id'>id</span>
+    <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/games/show&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/games/:id/delete-instance_method">
+  
+    #<strong>/games/:id/delete</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>raderar ett visst spel beroende på id och omdirigerar sen till hemsidan</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+285
+286
+287
+288
+289
+290</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 285</span>
+
+<span class='id identifier rubyid_post'>post</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/games/:id/delete</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>|</span> 
+    <span class='kw'>if</span> <span class='ivar'>@role</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&#39;</span></span>
+        <span class='const'>Game</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_redirect'>redirect</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/login-instance_method">
+  
+    #<strong>/login</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>loggar in en användare baserat på medskickade params och did´rigerar därefter vidare baserat på behörighet</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 96</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span>
+    <span class='ivar'>@login_failed</span> <span class='op'>=</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/users/login&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/login_failed-instance_method">
+  
+    #<strong>/login_failed</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>sätter @login_failed till true och laddar in formuläret för att logga in - views/stratroulette/users/login.erb</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104
+105</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 102</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/login_failed</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span>
+    <span class='ivar'>@login_failed</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/users/login&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/logout-instance_method">
+  
+    #<strong>/logout</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>loggar ut användaren om de är inloggader(clearar session) och sen dirigerar vidare till hemsidan</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85
+86</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 83</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/logout</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+    <span class='id identifier rubyid_redirect'>redirect</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/ratings_update/:id-instance_method">
+  
+    #<strong>/ratings_update/:id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>uppdaterar ratings för en viss strat beroende på id och medskickade params</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+179
+180
+181
+182</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 179</span>
+
+<span class='id identifier rubyid_post'>post</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/ratings_update/:id</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>|</span>
+    <span class='const'>Strat</span><span class='period'>.</span><span class='id identifier rubyid_updateRatings'>updateRatings</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>strat_rating_tot</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/games/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>game_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/register-instance_method">
+  
+    #<strong>/register</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>skapar en ny användare baserat på medskickade params och redirectar sedan til /login</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 90</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/register</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/users/register&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/strats-instance_method">
+  
+    #<strong>/strats</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>skapar en nu strat dirigerar sedan vidare beroende på behörighet</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 62</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/strats</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span>
+    <span class='ivar'>@strats</span> <span class='op'>=</span> <span class='const'>Strat</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/strats/index&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/strats/:id-instance_method">
+  
+    #<strong>/strats/:id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>laddar in all infor för en viss strat - views/stratroulette/strats/show.erb</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>id</span>
+      
+      
+        <span class='type'>(<tt>numeric</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>för straten som ska visas</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78
+79</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 76</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/strats/:id</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>|</span>
+    <span class='ivar'>@strat</span> <span class='op'>=</span> <span class='const'>Strat</span><span class='period'>.</span><span class='id identifier rubyid_selectFromId'>selectFromId</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/strats/show&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/strats/:id/delete-instance_method">
+  
+    #<strong>/strats/:id/delete</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>raderar en strat om man har behörigheten for det och dirigerar sedan en vidare beroende på behörighet</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 130</span>
+
+<span class='id identifier rubyid_post'>post</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/strats/:id/delete</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>|</span>
+    <span class='kw'>if</span> <span class='ivar'>@role</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>standard</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>or</span> <span class='ivar'>@role</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&#39;</span></span>
+        <span class='kw'>if</span> <span class='const'>Strat</span><span class='period'>.</span><span class='id identifier rubyid_selectFromId'>selectFromId</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>user_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span>
+            <span class='const'>Strat</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/user/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+        <span class='id identifier rubyid_redirect'>redirect</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/strats/:id/edit-instance_method">
+  
+    #<strong>/strats/:id/edit</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>laddar in sidan för att redigera en viss strat beroende på id om man har behörighet och digigerar sedan vidare beroende på behörighet</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+144
+145
+146
+147
+148
+149
+150
+151</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 144</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/strats/:id/edit</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>|</span>
+    <span class='kw'>if</span> <span class='ivar'>@role</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>standard</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>or</span> <span class='ivar'>@role</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&#39;</span></span>
+        <span class='ivar'>@strat</span> <span class='op'>=</span> <span class='const'>Strat</span><span class='period'>.</span><span class='id identifier rubyid_selectFromId'>selectFromId</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/strats/edit&quot;</span><span class='rparen'>)</span>
+    <span class='kw'>else</span> 
+        <span class='id identifier rubyid_redirct'>redirct</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/strats/:id/update-instance_method">
+  
+    #<strong>/strats/:id/update</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>updaterar straten beroende på id om man har behörighet och dirigerar sedan vidare beroende på behörighet</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+156
+157
+158
+159
+160
+161
+162
+163</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 156</span>
+
+<span class='id identifier rubyid_post'>post</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/strats/:id/update</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>|</span>
+    <span class='kw'>if</span> <span class='ivar'>@role</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>standard</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>or</span> <span class='ivar'>@role</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&#39;</span></span>
+        <span class='const'>Strat</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>strat_name</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>strat_description</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/user/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+        <span class='id identifier rubyid_redirct'>redirct</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/strats/new-instance_method">
+  
+    #<strong>/strats/new</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>laddar in formuläret för att skapa en ny strat - views/stratroulette/strats/new.erb</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 69</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/strats/new</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/strats/new&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/tags-instance_method">
+  
+    #<strong>/tags</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>lägger till en viss tag beroende på medckikade params och redirectar sedan till sidan för att lägga till tags på ett vist spel beroende på inskickande parametrar.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+328
+329
+330
+331</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 328</span>
+
+<span class='id identifier rubyid_post'>post</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/tags</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span>
+    <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>tag_name</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>tag_description</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/tags/add/</span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>game_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/tags/:id-instance_method">
+  
+    #<strong>/tags/:id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>laddar sidan för en viss tag beroende på id  - views/stratroulette/tags/show.erb</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+295
+296
+297
+298
+299</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 295</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/tags/:id</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>|</span>
+    <span class='ivar'>@tag</span> <span class='op'>=</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_selectFromId'>selectFromId</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='ivar'>@games</span> <span class='op'>=</span> <span class='const'>Game</span><span class='period'>.</span><span class='id identifier rubyid_selectFromTagId'>selectFromTagId</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/tags/show&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/tags/add/:id-instance_method">
+  
+    #<strong>/tags/add/:id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>lägger till en viss tag beroende på medskickade params till ett visst spel beroende på id och redirectar sedan till sidan för att lägga till tags på spelet</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 304</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/tags/add/:id</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>|</span>
+
+    <span class='ivar'>@tags</span> <span class='op'>=</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='rparen'>)</span>
+    <span class='ivar'>@alreadytags</span> <span class='op'>=</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_selectFromGameId'>selectFromGameId</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='ivar'>@alredytags</span> <span class='op'>!=</span> <span class='kw'>nil</span>
+        <span class='ivar'>@alreadytags</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_alreadytag'>alreadytag</span><span class='op'>|</span>
+            <span class='ivar'>@tags</span> <span class='op'>=</span> <span class='ivar'>@tags</span> <span class='op'>-</span> <span class='lbracket'>[</span><span class='id identifier rubyid_alreadytag'>alreadytag</span><span class='rbracket'>]</span>
+        <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    
+    <span class='ivar'>@id</span> <span class='op'>=</span> <span class='id identifier rubyid_id'>id</span>
+    <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/tags/add&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/user/:id-instance_method">
+  
+    #<strong>/user/:id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>laddar in användarsidan för en viss användare beronde på id - views/stratroulette/users/show.erb</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>id</span>
+      
+      
+        <span class='type'>(<tt>numeric</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>för användren</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 110</span>
+
+<span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/user/:id</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>|</span>
+    <span class='kw'>if</span> <span class='ivar'>@role</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>standard</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>or</span> <span class='ivar'>@role</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&#39;</span></span>
+        <span class='ivar'>@strats</span> <span class='op'>=</span> <span class='const'>Strat</span><span class='period'>.</span><span class='id identifier rubyid_selectFromUserId'>selectFromUserId</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+        <span class='ivar'>@id</span> <span class='op'>=</span> <span class='id identifier rubyid_id'>id</span>
+        <span class='ivar'>@empty</span> <span class='op'>=</span> <span class='kw'>false</span>
+        <span class='kw'>if</span> <span class='ivar'>@strats</span> <span class='op'>==</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+            <span class='ivar'>@empty</span> <span class='op'>=</span> <span class='kw'>true</span>
+        <span class='kw'>end</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>!=</span> <span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+            <span class='id identifier rubyid_redirect'>redirect</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span>
+        <span class='kw'>end</span>
+        <span class='id identifier rubyid_erb'>erb</span><span class='lparen'>(</span><span class='symbol'>:&quot;stratroulette/users/show&quot;</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+        <span class='id identifier rubyid_redirect'>redirect</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/users/:id/delete-instance_method">
+  
+    #<strong>/users/:id/delete</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>raderar en viss strat beroende på id och redirectar sedan till hemsidan</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+240
+241
+242
+243
+244</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 240</span>
+
+<span class='id identifier rubyid_post'>post</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/users/:id/delete</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>|</span>
+    <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+    <span class='id identifier rubyid_redirect'>redirect</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="before-instance_method">
+  
+    #<strong>before</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>sätter @role och @admin beroende på vilken behörighet</p>
+</div>
+  </div>
+
+
+<p>en funktion som körs före varenda route, håller koll på vilken behörighet användaren har, returnar inget men sätter några variabler</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 30</span>
+
+<span class='id identifier rubyid_before'>before</span> <span class='kw'>do</span>
+    <span class='ivar'>@role</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>guest</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_admin'>admin</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_selectFromId'>selectFromId</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_admin'>admin</span> <span class='op'>!=</span> <span class='kw'>nil</span> 
+        <span class='ivar'>@admin</span> <span class='op'>=</span> <span class='id identifier rubyid_admin'>admin</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='kw'>else</span>
+        <span class='ivar'>@admin</span> <span class='op'>=</span> <span class='int'>0</span>
+    <span class='kw'>end</span>
+    <span class='ivar'>@rut</span> <span class='op'>=</span> <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_fullpath'>fullpath</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='kw'>nil</span>
+        <span class='kw'>if</span> <span class='ivar'>@admin</span> <span class='op'>==</span> <span class='id identifier rubyid_admin'>admin</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+            <span class='ivar'>@role</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&#39;</span></span>
+        <span class='kw'>else</span>
+            <span class='ivar'>@role</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>standard</span><span class='tstring_end'>&#39;</span></span>
+        <span class='kw'>end</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="db-instance_method">
+  
+    #<strong>db</strong>  &#x21d2; <tt>SQLite3::Database</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>en funktion som returnar datatbasen så att man enklare kan pilla i databasem</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code>db.execute(...)</code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>SQLite3::Database</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>databas</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_db'>db</span>
+    <span class='kw'>return</span> <span class='ivar'>@db</span> <span class='kw'>if</span> <span class='ivar'>@db</span>
+    <span class='ivar'>@db</span> <span class='op'>=</span> <span class='const'>SQLite3</span><span class='op'>::</span><span class='const'>Database</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>db/stratroulette.sqlite</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_results_as_hash'>results_as_hash</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='kw'>return</span> <span class='ivar'>@db</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon May  5 15:01:36 2025 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.37 (ruby-3.2.2).
+</div>
+
+    </div>
+  </body>
+</html>
